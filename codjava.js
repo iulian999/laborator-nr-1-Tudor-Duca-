@@ -1,4 +1,4 @@
-// Calculator diferență zile
+// ==================== Calculator diferență zile ====================
 function calculateDays() {
     let startDate = new Date(document.getElementById("startDate").value);
     let endDate = new Date(document.getElementById("endDate").value);
@@ -12,7 +12,7 @@ function calculateDays() {
     document.getElementById("dateResult").innerText = `Diferența este de ${difference} zile.`;
 }
 
-// Calculator diferență ore
+// ==================== Calculator diferență ore ====================
 function calculateTime() {
     let startTime = document.getElementById("startTime").value;
     let endTime = document.getElementById("endTime").value;
@@ -32,36 +32,52 @@ function calculateTime() {
     document.getElementById("timeResult").innerText = `Diferența este de ${difference} minute.`;
 }
 
-// Slideshow
-let slideIndex = 0;
-showSlides(slideIndex);
+// ==================== Slideshow ====================
+window.onload = function() {
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+    let timer;
 
-function showSlides(n) {
-    let slides = document.getElementsByClassName("slide");
-    if (n >= slides.length) {
-        slideIndex = 0;
-    } else if (n < 0) {
-        slideIndex = slides.length - 1;
-    } else {
-        slideIndex = n;
+    function showSlides(n) {
+        if (n >= slides.length) { slideIndex = 0; }
+        else if (n < 0) { slideIndex = slides.length - 1; }
+        else { slideIndex = n; }
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            slides[i].style.opacity = 0;
+        }
+
+        slides[slideIndex].style.display = "block";
+        setTimeout(() => slides[slideIndex].style.opacity = 1, 50);
+
+        resetTimer();
     }
 
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    window.plusSlides = function(n) {
+        showSlides(slideIndex + n);
     }
-    slides[slideIndex].style.display = "block";
-}
 
-function plusSlides(n) {
-    showSlides(slideIndex + n);
-}
+    function resetTimer() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(() => plusSlides(1), 5000); // schimbă slide automat la 5 sec
+    }
 
-// Formular de înregistrare
+    showSlides(slideIndex);
+
+    // ==================== Meniu dropdown ====================
+    document.getElementById("menuButton").addEventListener("click", function() {
+        document.getElementById("menu").classList.toggle("show");
+    });
+};
+
+// ==================== Formular de înregistrare ====================
 document.getElementById("registrationForm").addEventListener("submit", function(event) {
     event.preventDefault(); 
 
     let valid = true;
 
+    // Nume
     let name = document.getElementById("name");
     let nameError = name.nextElementSibling;
     if (name.value.trim().length < 3) {
@@ -71,6 +87,7 @@ document.getElementById("registrationForm").addEventListener("submit", function(
         nameError.textContent = "";
     }
 
+    // Email
     let email = document.getElementById("email");
     let emailError = email.nextElementSibling;
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -81,6 +98,7 @@ document.getElementById("registrationForm").addEventListener("submit", function(
         emailError.textContent = "";
     }
 
+    // Telefon
     let phone = document.getElementById("phone");
     let phoneError = phone.nextElementSibling;
     let phoneRegex = /^[0-9]{10}$/;
@@ -91,6 +109,7 @@ document.getElementById("registrationForm").addEventListener("submit", function(
         phoneError.textContent = "";
     }
 
+    // Parolă
     let password = document.getElementById("password");
     let passwordError = password.nextElementSibling;
     if (password.value.length < 6) {
@@ -100,6 +119,7 @@ document.getElementById("registrationForm").addEventListener("submit", function(
         passwordError.textContent = "";
     }
 
+    // Confirmare parolă
     let confirmPassword = document.getElementById("confirmPassword");
     let confirmPasswordError = confirmPassword.nextElementSibling;
     if (confirmPassword.value !== password.value) {
@@ -109,7 +129,8 @@ document.getElementById("registrationForm").addEventListener("submit", function(
         confirmPasswordError.textContent = "";
     }
 
-    let terms = document.getElementById("terms");
+    // Termeni și condiții
+    let terms = document.getElementById("accept"); // corectat ID-ul
     let termsError = terms.nextElementSibling;
     if (!terms.checked) {
         termsError.textContent = "Trebuie să acceptați termenii.";
@@ -118,15 +139,54 @@ document.getElementById("registrationForm").addEventListener("submit", function(
         termsError.textContent = "";
     }
 
+    // Înregistrare reușită
     if (valid) {
         alert("Înregistrare reușită!");
         document.getElementById("registrationForm").reset();
     }
 });
-    
 
-<script>
-document.getElementById("menuButton").addEventListener("click", function() {
-    document.getElementById("menu").classList.toggle("show");
+const btnTestDrive = document.getElementById("btnTestDrive");
+const popup = document.getElementById("testDrivePopup");
+const closeBtn = document.querySelector(".popup .close");
+const form = document.getElementById("testDriveForm");
+
+// Deschide popup
+btnTestDrive.addEventListener("click", function() {
+    popup.classList.add("show");
 });
-</script>
+
+// Închide popup la X
+closeBtn.addEventListener("click", function() {
+    popup.classList.remove("show");
+});
+
+// Închide popup dacă dai click în afara ferestrei
+window.addEventListener("click", function(e) {
+    if (e.target === popup) {
+        popup.classList.remove("show");
+    }
+});
+
+// Formular Test Drive cu validare
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+
+    if(!name || !email || !phone){
+        alert("Te rog completează toate câmpurile!");
+        return;
+    }
+
+    alert("Programarea ta pentru Test Drive a fost trimisă!");
+    form.reset();
+    popup.classList.remove("show");
+});
+
+
+
+
+

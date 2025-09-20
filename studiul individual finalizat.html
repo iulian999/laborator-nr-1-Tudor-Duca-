@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)http://127.0.0.1:5500/.vscode/index2.html#contact -->
-<html lang="ro"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="ro">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proiect Web Combinat</title>
@@ -48,6 +49,9 @@
         <button id="menuButton">☰</button>
     </div>
 
+
+
+    
     <!-- Meniu de navigare -->
     <nav id="menu">
         <ul>
@@ -109,10 +113,35 @@
     <br>
     <br>
 
-   <section id="test-drive" class="parallax">
-    <h2>Programare Test Drive</h2>
-    <button id="testDriveButton">Înregistrează-te</button>
-</section>
+
+<!-- Buton unic -->
+<button id="btnTestDrive">Înregistrează-te</button>
+
+<!-- Popup -->
+<div id="testDrivePopup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>Programare Test Drive</h2>
+        <form id="testDriveForm">
+            <div class="form-group">
+                <label for="name">Nume complet</label>
+                <input type="text" id="name" placeholder="Ex: Iulian Dorogoi">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Ex: email@domeniu.com">
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" placeholder="Ex: 0712345678">
+            </div>
+            <button type="submit">Trimite</button>
+        </form>
+    </div>
+</div>
+
+
+    
 
 
     <script>
@@ -120,7 +149,6 @@
             document.getElementById("menu").classList.toggle("show");
         });
     </script>
-
 
 
 
@@ -192,7 +220,7 @@
             <img src="img/audi-a5.jpg" alt="Audi a5">
         </div>
         <div class="slide fade" style="display: none;">
-            <img src="img/audi-a5.jpg" alt="Audi q5">
+            <img src="img/audi-q5.jpg" alt="Audi q5">
         </div>
         <div class="slide fade" style="display: none;">
             <img src="img/audi-q7.jpg" alt="Audi q7">
@@ -202,14 +230,16 @@
         <a class="prev" onclick="plusSlides(-1)">❮</a>
         <a class="next" onclick="plusSlides(1)">❯</a>
     </div>
-
+    </section>
     <!-- Secțiunea 3: Formular Web cu Validare Dinamică -->
  <br>
  <br>
  <br>
  <br>
  <br>
- <br>
+ 
+
+
  <br>
  <br>
  <br>
@@ -281,6 +311,21 @@
     <br>
     <br>
     <br>
+
+<!-- Widget Programările mele -->
+<div id="appointmentsWidget" style="position: fixed; bottom: 20px; right: 20px; width: 250px; z-index: 1000;">
+    <button id="appointmentsButton" style="width: 100%; padding: 10px; background:#c40000; color:white; border:none; border-radius:6px; cursor:pointer;">
+        Programările mele (<span id="appointmentsCount">0</span>)
+    </button>
+    <ul id="appointmentsUl" style="display: none; list-style: none; padding: 10px; margin: 0; background:white; color:black; border-radius:6px; max-height:300px; overflow-y:auto; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
+        <!-- Programările vor fi adăugate aici -->
+    </ul>
+</div>
+
+
+
+
+
     <br>
     <br>
     <br>
