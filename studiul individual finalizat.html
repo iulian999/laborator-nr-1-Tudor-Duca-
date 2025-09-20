@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://127.0.0.1:5500/.vscode/index2.html#contact -->
+<html lang="ro"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proiect Web Combinat</title>
+    
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Audi</title>
+    <link rel="stylesheet" href="styles-combined.css">
+
+
+
+<style>
+        @font-face {
+            font-family: 'NotoSans_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-regular.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_medium_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-medium.ttf);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_bold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-bold.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_semibold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-semibold.ttf);
+        }
+</style></head>
+<body>
+
+
+    <header>
+    <div class="header-container">
+        <!-- Logo Audi -->
+        <a href="#hero">
+            <img src="img/logo.png" alt="Logo Audi" class="logo">
+        </a>
+
+        <!-- Buton meniu -->
+        <button id="menuButton">☰</button>
+    </div>
+
+    <!-- Meniu de navigare -->
+    <nav id="menu">
+        <ul>
+            <li><a href="#modele">Modele Audi</a></li>
+            <li><a href="#test-drive">Test Drive</a></li>
+            <li><a href="#prelucrare">Prelucrare Data & Oră</a></li>
+            <li><a href="#slideshow">Slideshow</a></li>
+            <li><a href="#inregistrare">Înregistrează-te</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+      
+      
+
+    <section id="hero">
+        <h1>Bine ai venit la Dealerul Audi</h1>
+        <br>
+        <br>
+        <p>Descoperă modelele noastre premium</p>
+    </section>
+
+    <section id="modele">
+        <h1>Modele Audi</h1>
+        <br>
+        <br>
+        <div class="model-list">
+            <div class="model">
+                <img src="img/audi-a3.jpg" alt="Audi A3">
+                <p>Audi A3</p>
+            </div>
+            <div class="model">
+                <img src="img/audi-a4.jpg" alt="Audi A4">
+                <p>Audi A4</p>
+            </div>
+            <div class="model">
+                <img src="img/audi-a5.jpg" alt="Audi A5">
+                <p>Audi A5</p>
+            </div>
+            <div class="model">
+                <img src="img/audi-a6.jpg" alt="Audi A6">
+                <p>Audi A6</p>
+            </div>
+            <div class="model">
+                <img src="img/audi-q5.jpg" alt="Audi Q5">
+                <p>Audi Q5</p>
+            </div>
+            <div class="model">
+                <img src="img/audi-q7.jpg" alt="Audi Q7">
+                <p>Audi Q7</p>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+   <section id="test-drive" class="parallax">
+    <h2>Programare Test Drive</h2>
+    <button id="testDriveButton">Înregistrează-te</button>
+</section>
+
+
+    <script>
+        document.getElementById("menuButton").addEventListener("click", function() {
+            document.getElementById("menu").classList.toggle("show");
+        });
+    </script>
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Secțiunea 1: Calculator diferență zile și ore -->
+    <div class="container">
+        <h1>Aplicație de Prelucrare a Datei și Orei</h1>
+        
+ <section id="prelucrare">
+        <!-- Calculator diferență zile -->
+        <div class="calendar">
+            <h2>Calculator diferență zile</h2>
+            <label for="startDate">Data de start:</label>
+            <input type="date" id="startDate">
+            <label for="endDate">Data de sfârșit:</label>
+            <input type="date" id="endDate">
+            <button onclick="calculateDays()">Calculează</button>
+            <p id="dateResult">Diferența este de 91 zile.</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Calculator diferență ore -->
+        <div class="clock">
+            <h2>Calculator diferență ore</h2>
+            <label for="startTime">Ora de start:</label>
+            <input type="time" id="startTime">
+            <label for="endTime">Ora de sfârșit:</label>
+            <input type="time" id="endTime">
+            <button onclick="calculateTime()">Calculează</button>
+            <p id="timeResult">Diferența este de 236 minute.</p>
+        </div>
+    </section></div>
+
+    <!-- Secțiunea 2: Slideshow Audi -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section id="slideshow">
+   
+    <div class="slideshow-container">
+        <div class="slide fade" style="display: none;">
+            <img src="img/audi-a3.jpg" alt="Audi a3">
+        </div>
+        <div class="slide fade" style="display: block;">
+            <img src="img/audi-a4.jpg" alt="Audi a4">
+        </div>
+        <div class="slide fade" style="display: none;">
+            <img src="img/audi-a5.jpg" alt="Audi a5">
+        </div>
+        <div class="slide fade" style="display: none;">
+            <img src="img/audi-a5.jpg" alt="Audi q5">
+        </div>
+        <div class="slide fade" style="display: none;">
+            <img src="img/audi-q7.jpg" alt="Audi q7">
+        </div>
+
+        <!-- Butoane pentru navigare -->
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+
+    <!-- Secțiunea 3: Formular Web cu Validare Dinamică -->
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+
+ 
+    <section id="inregistrare">
+   
+    <div class="container">
+        <h1>📝 Înregistrează-te</h1>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="name">Nume complet</label>
+                <input type="text" id="name" placeholder="Ex: Iulian Dorogoi" required="">
+                <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Ex: email@domeniu.com" required="">
+                <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Număr de telefon</label>
+                <input type="tel" id="phone" placeholder="Ex: 0712345678" required="">
+                <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Parolă</label>
+                <input type="password" id="password" placeholder="Minim 6 caractere" required="">
+                <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirmă parola</label>
+                <input type="password" id="confirmPassword" placeholder="Reintrodu parola" required="">
+                <span class="error-message"></span>
+            </div>
+
+
+          
+
+          <div class="form-group checkbox">
+    <input type="checkbox" id="accept" name="accept" required>
+    <label for="accept">Sunt de acord cu termenii și condițiile</label>
+    <span class="error-message"></span>
+        </div>
+
+
+
+            <button type="submit">Înregistrează-te</button>
+        </form>
+    </div>
+
+    
+
+    
+    <script src="codjava.js"></script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <footer id="contact">
+        <p>© 2025 Dealer Audi | Contact: info@audi.md | +373 7070-074</p>
+       <p> Conditions of Use &amp; Sale
+        Privacy Notice
+        Imprint
+        Cookies Notice
+        Interest-Based Ads Notice</p>
+
+    </footer>
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</section></section>
+</body>
+</html>
